@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>MyFirstBlog</title>
+    <url>/2020/04/23/myFirstBlog/</url>
+    <content><![CDATA[<h2 id="使用hexo部署博客"><a href="#使用hexo部署博客" class="headerlink" title="使用hexo部署博客"></a>使用hexo部署博客</h2><p>看到了学院同学写得一篇博客。然后又看了下他分享的个人博客网站，所以想自己也来搞一个玩<a id="more"></a>玩，哈哈哈<br><a href="https://mp.weixin.qq.com/s/UjERE8c_G8RejPEIYSretg" target="_blank" rel="noopener">部署教程</a><br>网络不太好的同学看过来~<br><a href="https://pan.baidu.com/s/1sc-6ZfKOLrdAjH_5UNYD5Q" target="_blank" rel="noopener">打包好的nodejs和Git（提取码：oxdx）</a></p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pictrue</title>
+    <url>/2020/04/25/pictrue/</url>
+    <content><![CDATA[<p>花与少女<br><img src="https://img-blog.csdnimg.cn/20200425173921849.jpg" alt="花与少女"></p>
+<a id="more"></a>
+<p>佛祖降世<br><img src="https://img-blog.csdnimg.cn/20200425173520802.jpg" alt="佛祖降世"></p>
+]]></content>
+      <categories>
+        <category>comic</category>
+      </categories>
+      <tags>
+        <tag>pictrue</tag>
+      </tags>
+  </entry>
+</search>
