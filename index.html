@@ -79,6 +79,12 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -213,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 17:05:00 / 修改时间：17:02:54" itemprop="dateCreated datePublished" datetime="2020-05-11T17:05:00+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 17:05:00 / 修改时间：19:44:15" itemprop="dateCreated datePublished" datetime="2020-05-11T17:05:00+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>26</span>
+              <span>3</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -264,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一组动静结合图片"><a href="#一组动静结合图片" class="headerlink" title="一组动静结合图片"></a>一组动静结合图片</h2><p>这不是物体的运动，这是生命的流淌啊~<br><img src="https://img-blog.csdnimg.cn/20200511161502119.gif" alt="在这里插入图片描述"></p>
+          <h2 id="流淌"><a href="#流淌" class="headerlink" title="流淌~"></a>流淌~</h2><p><img src="https://img-blog.csdnimg.cn/20200511161502119.gif" alt="在这里插入图片描述"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/11/Cinemagraph/#more" rel="contents">
@@ -600,9 +606,6 @@
 
 
       </div>
-	   <div id="music163player">
-		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=166321&auto=0&height=66"></iframe>
-	   </div>
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
@@ -661,6 +664,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -675,6 +679,65 @@
 <script src="/js/next-boot.js"></script>
 
 <script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -702,6 +765,7 @@
 
 
 
+    <div id="pjax">
   
 
   
@@ -735,6 +799,9 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
+    </div>
   <script src="//code.tidio.co/azernce14old7zr7spucwrq7fwlavqkx.js" async></script>
+  <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
 </body>
 </html>
