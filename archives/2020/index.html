@@ -191,13 +191,33 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
+        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
       </div>
 
       
     <div class="collection-year">
       <span class="collection-header">2020</span>
     </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-05-11T17:05:00+08:00"
+              content="2020-05-11">
+          05-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/05/11/Cinemagraph/" itemprop="url">
+            <span itemprop="name">Cinemagraph</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
 
   <article itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -313,7 +333,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -334,6 +354,9 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/yxh0714" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yxh0714" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/profile.php?id=100050487196470" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100050487196470" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -461,17 +484,17 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
     new Valine({
       el         : '#valine-comments',
       verify     : false,
-      notify     : false,
+      notify     : true,
       appId      : 'ODJ6VTq6cIvFxjqrV3yHFMI9-gzGzoHsz',
       appKey     : 'w19yjB14CMFUDBJsO6gvDRfK',
-      placeholder: "Just go go",
+      placeholder: "评论# Comment box placeholder",
       avatar     : 'mm',
       meta       : guest,
       pageSize   : '10' || 10,
       visitor    : false,
       lang       : '' || 'zh-cn',
       path       : location.pathname,
-      recordIP   : false,
+      recordIP   : true,
       serverURLs : ''
     });
   }, window.Valine);
